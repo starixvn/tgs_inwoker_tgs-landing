@@ -1,5 +1,5 @@
 const breakpoint = {
-  mobile: "max-width:400px",
+  mobile: "max-width: 540px",
 };
 
 export default breakpoint;
