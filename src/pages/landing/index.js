@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import styled from "styled-components";
-import BackgroundJPG from "../../assets/background.jpg";
+import BackgroundJPG from "../../assets/images/background.jpg";
+import LanguageChanger from "../../component/languageChanger";
+import languageChanger from "../../component/languageChanger";
 import breakpoint from "../../config/breakpoints";
 import config from "../../config/config";
+import i18n from "../../config/i18n";
+import { AppHistory } from "../../config/router";
 
 const Wrapper = styled.div`
   display: flex;
@@ -10,7 +15,7 @@ const Wrapper = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100vw;
-
+  position: relative;
   @media (${breakpoint.mobile}) {
     justify-content: space-between;
   }
@@ -28,10 +33,9 @@ const Background = styled.div`
 `;
 
 const LogoHolder = styled.img`
-  width: 10vw;
+  width: 200px;
 
   @media (${breakpoint.mobile}) {
-    width: 200px;
     margin-top: 10vh;
   }
 `;
@@ -158,25 +162,40 @@ const FooterItem = styled.div`
   }
 `;
 
+const LanguageChangerHolder = styled.div`
+  position: fixed;
+  right: 10px;
+  top: 20px;
+  z-index: 1;
+`;
+
 function App() {
   const country = [
-    { flag: "my", name: "Malaysia", to: "1" },
-    { flag: "th", name: "Thailand", to: "2" },
+    { flag: "my", name: i18n.t("country.my"), to: "1" },
+    { flag: "th", name: i18n.t("country.th"), to: "2" },
   ];
 
   const footer = [
-    { icon: "support", text: "24/7 Online Support" },
-    { icon: "trusted", text: "Trusted Website" },
-    { icon: "fast", text: "Fast Deposit Withdrawal" },
+    { icon: "support", text: i18n.t("footer.support") },
+    { icon: "trusted", text: i18n.t("footer.trusted") },
+    { icon: "fast", text: i18n.t("footer.fast") },
   ];
 
   function goto(params) {
     window.location.href = config.baseUrl + "/" + params;
   }
 
+  useEffect(() => {
+    AppHistory.push("/" + i18n.language);
+  }, []);
+
   return (
     <Wrapper>
+      <LanguageChangerHolder>
+        <LanguageChanger />
+      </LanguageChangerHolder>
       <Background className="App" />
+
       <LogoHolder
         src={process.env.PUBLIC_URL + "/assets/logo/" + config.brand + ".png"}
       />
@@ -206,7 +225,7 @@ function App() {
             );
           })}
         </CountryHolder>
-        <Description>Please Select Your Country</Description>
+        <Description>{i18n.t("country.title")}</Description>
       </div>
       <Footer>
         {footer.map((data, index) => {

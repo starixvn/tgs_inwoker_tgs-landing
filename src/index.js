@@ -1,13 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './pages/landing';
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
+import i18n from "./config/i18n";
+import AppRouter, { AppHistory } from "./config/router";
+import "./index.css";
 
+const Wrapper = () => {
+  useEffect(() => {
+    AppHistory.push("/" + i18n.language);
+  }, []);
+  return <AppRouter />;
+};
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Wrapper />
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
