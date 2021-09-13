@@ -11,7 +11,7 @@ const Wrapper = () => {
     AppHistory.push("/" + i18n.language);
     document.title = config.brand;
     document.querySelector("link[rel*='icon']").href =
-      process.env.PUBLIC_URL + `/assets/favicon/${config.brand}.png`;
+      process.env.PUBLIC_URL + `/assets/favicon/${config.brand}.ico`;
   }, []);
   return <AppRouter />;
 };
