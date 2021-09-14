@@ -171,8 +171,8 @@ const LanguageChangerHolder = styled.div`
 
 function App() {
   const country = [
-    { flag: "my", name: i18n.t("country.my"), to: "1" },
-    { flag: "th", name: i18n.t("country.th"), to: "2" },
+    { flag: "my", name: i18n.t("country.my"), to: 0 },
+    { flag: "th", name: i18n.t("country.th"), to: 1 },
   ];
 
   const footer = [
@@ -182,7 +182,7 @@ function App() {
   ];
 
   function goto(params) {
-    window.location.href = config.baseUrl + "/" + params;
+    window.location.href = config.urls[params];
   }
 
   useEffect(() => {
