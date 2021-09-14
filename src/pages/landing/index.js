@@ -182,7 +182,7 @@ function App() {
   ];
 
   function goto(params) {
-    window.location.href = config.urls[params];
+    window.location.href = config.urls.split(",")[params];
   }
 
   useEffect(() => {
