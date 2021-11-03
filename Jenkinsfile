@@ -28,7 +28,7 @@ pipeline {
             steps {	  
                 script {			
                     withKubeConfig([credentialsId: env.k8s_config]) {
-                        sh "kubectl set image deployment/tgs-landing tgs-landing=${Registry}${Image}:${TAG} --record -n prod"
+                        sh "kubectl set image deployment/lobby-21gen-landing lobby-21gen-landing=${Registry}${Image}:${TAG} --record -n prod"
                     }
                 }
             }
