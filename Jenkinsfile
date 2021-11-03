@@ -27,7 +27,7 @@ pipeline {
         stage('Deployment') {   
             steps {	  
                 script {			
-                    withKubeConfig([credentialsId: 'stag-k8s-config') {
+                    withKubeConfig([credentialsId: 'stag-k8s-config']) {
                         sh "kubectl set image deployment/lobby-21gen-landing lobby-21gen-landing=${Registry}${Image}:${TAG} --record -n prod"
                     }
                 }
