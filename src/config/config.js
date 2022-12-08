@@ -1,6 +1,6 @@
 const config = {
-  brand: window?.env?.brand || "21GEN",
-  urls: window?.env?.urls || "https://my.21gen.com,https://th.21gen.com",
+  brand: window?.env?.brand || "TIGER",
+  urls: window?.env?.urls || "https://stg.hktiger888.com,https://stg.macau8.net",
 };
 
 export default config;

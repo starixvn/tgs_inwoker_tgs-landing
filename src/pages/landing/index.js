@@ -33,7 +33,7 @@ const Background = styled.div`
 `;
 
 const LogoHolder = styled.img`
-  width: 200px;
+  width: 500px;
 
   @media (${breakpoint.mobile}) {
     margin-top: 10vh;
@@ -171,8 +171,8 @@ const LanguageChangerHolder = styled.div`
 
 function App() {
   const country = [
-    { flag: "my", name: i18n.t("country.my"), to: 0 },
-    { flag: "th", name: i18n.t("country.th"), to: 1 },
+    { flag: "cn", name: i18n.t("country.cn"), to: 1 },
+    { flag: "hk", name: i18n.t("country.hk"), to: 0 },
   ];
 
   const footer = [

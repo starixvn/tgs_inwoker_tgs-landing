@@ -2,7 +2,9 @@
   "country": {
     "title": "Please Select Your Country",
     "my": "Malaysia",
-    "th": "Thailand"
+    "th": "Thailand",
+    "cn": "China",
+    "hk": "HongKong"
   },
   "footer": {
     "support": "24/7 Online Support",
