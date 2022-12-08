@@ -29,7 +29,7 @@ pipeline {
             steps {	  
                 script {			
                     withKubeConfig([credentialsId: 'stag-k8s-config']) {
-                        sh "kubectl set image deployment/lobby-21gen-landing lobby-21gen-landing=${Registry}${Image}:${TAG} --record -n prod"
+                        sh "kubectl set image deployment/lobby-tiger-landing lobby-tiger-landing=${Registry}${Image}:${TAG} --record -n staging"
                     }
                 }
             }
