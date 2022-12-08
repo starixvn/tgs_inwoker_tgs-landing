@@ -171,8 +171,8 @@ const LanguageChangerHolder = styled.div`
 
 function App() {
   const country = [
-    { flag: "cn", name: i18n.t("country.cn"), to: 1 },
-    { flag: "hk", name: i18n.t("country.hk"), to: 0 },
+    { flag: "cn", name: i18n.t("country.cn"), to: 0 },
+    { flag: "hk", name: i18n.t("country.hk"), to: 1 },
   ];
 
   const footer = [
